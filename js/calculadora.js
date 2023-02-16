@@ -16,6 +16,7 @@ class Calculadora {
   adicionarNumero(num) {
     if (this.textoOperacaoAtual.innerText.includes(".") && num === ".") return;
 
+    tocarSom("audio/botao.mp3");
     this.operacaoAtual = num;
     this.atualizarVisor();
   }
@@ -29,6 +30,7 @@ class Calculadora {
       this.ligada = true;
       visor.style.backgroundColor = "#9ef0f0";
       visor.style.boxShadow = "0 0 0.2em #fff inset";
+      tocarSom("audio/botao.mp3");
     }
   }
 
@@ -36,6 +38,7 @@ class Calculadora {
     this.textoOperacaoAtual.innerText = "";
     this.textoOperacaoPassada.innerText = "";
     this.operacaoAtual = "";
+    tocarSom("audio/botao.mp3"); 
   }
 
   calcular(n1, n2, op) {
@@ -70,7 +73,7 @@ class Calculadora {
         return;
       }
     }
-
+    
     // pegando valores atuais e passados
     let valorOperacao;
     const passada = +this.textoOperacaoPassada.innerText.split(" ")[0];
@@ -112,6 +115,11 @@ class Calculadora {
     if (valorOperacao === null)
       this.textoOperacaoAtual.innerText += this.operacaoAtual;
     else {
+      if(operacao !== "<")
+        tocarSom("audio/botao.mp3");
+      else
+        tocarSom("audio/apagar.mp3");
+      
       if (operacao === "=") {
         this.textoOperacaoPassada.innerText = "";
         this.textoOperacaoAtual.innerText = valorOperacao;
@@ -146,3 +154,8 @@ botoes.forEach((btn) => {
     }
   });
 });
+
+function tocarSom(som){
+  let audio = new Audio(som);
+  audio.play();
+};
