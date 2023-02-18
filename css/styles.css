@@ -7,6 +7,7 @@
   font-weight: bold;
   box-sizing: border-box;
 }
+
 /* header */
 .nav-bar {
   width: 100%;
@@ -17,6 +18,7 @@
   color: #fff;
   border-bottom-left-radius:  50%;
   border-bottom-right-radius:  50%;
+  margin-bottom: 1em;
 }
 .nav-bar ul{
   list-style-type: none;
@@ -27,9 +29,16 @@
   float:left;
 }
 
+.nav-bar li a{
+  font-size: 1em;
+  text-decoration: none;
+}
+
+
 /* footer */
 footer {
-  margin: .5em 5em;
+  position: relative;
+  inset: 5% 27% 0px;
   width: 24em;
   height: 13em;
   display: flex;
@@ -68,6 +77,15 @@ button {
   box-shadow: 0 0 0.3em #666;
 }
 
+.botao-duplo-horizontal {
+  width: 100px;
+  text-align: center;
+}
+
+.botao-duplo-vertical {
+  height: 95px;
+}
+
 button:hover {
   background-color: #fff;
   color: #000;
@@ -80,11 +98,12 @@ button:active {
 }
 
 .corpo-calculadora {
+  position:relative;
+  inset: 15% 30%;
   display: flex;
   flex-flow: row wrap;
-  margin: 3em 8em;
   padding: 15px;
-  width: 270px;
+  width:270px;
   height: 480px;
   background-color: #000;
   border-radius: 20px;
@@ -120,12 +139,6 @@ button:active {
   font-size: 1.5em;
 }
 
-.botao-on {
-  display: flex;
-  height: 15%;
-  width: 90%;
-  justify-content: end;
-}
 
 .operacao {
   background-color: #fff;
@@ -145,53 +158,151 @@ button:active {
 }
 
 .botoes {
-  display: flex;
+  display: grid;
   height: 75%;
   width: 100%;
-  box-sizing: border-box;
-  flex-flow: row wrap;
-  justify-content: center;
   background-color: #222222;
   border-style: none;
   border-radius: 10px;
+  grid-template-areas: 
+  "on on on on"
+  "c mais-menos dividir apagar"
+  "sete oito nove vezes"
+  "quatro cinco seis menos"
+  "um dois tres mais"
+  "zeroo ponto igual mais"
+  ;
 }
 
-.botoes-de-baixo {
-  display: flex;
-  flex-flow: column wrap;
-  margin: 0px 10px 10px 10px;
-  width: 100%;
-  height: 30%;
-  justify-content: center;
+.on{
+  grid-area: on;
+  justify-self: end;
+}
+.c{
+  grid-area: c;
+}
+.mais-menos{
+  grid-area: mais-menos;
+}
+.dividir{
+  grid-area: dividir;
+}
+.apagar{
+  grid-area:apagar;
+}
+.sete{
+  grid-area: sete;
+}
+.oito{
+  grid-area: oito;
+}
+.nove{
+  grid-area: nove;
+}
+.menos{
+  grid-area: vezes;
+}
+.quatro{
+  grid-area: quatro;
+}
+.cinco{
+  grid-area: cinco;
+}
+.seis{
+  grid-area: seis;
+}
+.menos{
+  grid-area: menos;
+}
+.um{
+grid-area: um;
+}
+.dois{
+  grid-area: dois;
+}
+.tres{
+  grid-area: tres;
+}
+.mais{
+  grid-area: mais;
+}
+.zero{
+  grid-area: zeroo;
+}
+.ponto{
+  grid-area: ponto;
+}
+.igual{
+  grid-area: igual;
 }
 
-.botao-duplo-horizontal {
-  width: 100px;
-  text-align: center;
-}
 
-.botao-duplo-vertical {
-  height: 85px;
-}
 
 /* lista de tarefas */
+.tarefas{
+  position:relative;
+  inset: 15% 30%;
+  display: flex;
+  width: 300px;
+  flex-flow: row wrap;
+}
+.tarefas input{
+  background-color: orange;
+  width: 100%;
+  height: 2em;
+  font-size: 2em;
+  border-radius: 5%;
+  border: 2px #000 solid;
+}
+
+.tarefas input::placeholder{
+  color: #444444;
+}
+
+
+.tarefas button{
+  width: 45%;
+  border: 1px solid #000;
+  background-color: yellow;
+  color: #000;
+  margin-left: 3.2em;
+  transition-duration: 0.1s;
+}
+
+.tarefas button:hover{
+background-color: lightsalmon;
+}
+
+.tarefas button:active{
+  box-shadow: 1px 5px 1px #000;
+  background-color: orangered;
+  color:#fff;
+}
+
+
 .bloco-de-notas {
-  margin: 2em 8em;
+  position:relative;
+  margin-top:1em;
+  inset: 15% 30%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   width: 300px;
-  height: 500px;
+  height: fit-content;
   background-color: yellow;
   border-radius: 10%;
+  box-shadow: 1px 1px 3px #000;
 }
 .cabecalho {
   text-align: center;
+  margin-bottom: 1em;
   font-size: 30px;
-  width: 85%;
+  width: 100%;
   height: 7%;
   background-color: orangered;
-  border-radius: 15%;
+  border-end-end-radius: 15%;
+  border-end-start-radius: 15% ;
+  border:1px 1px 5px #000;
 }
 .linhas {
   display: flex;
@@ -219,78 +330,26 @@ input[type="checkbox"] {
 }
 
 /* pomodoro */
-
 .tomate{
-  display: flex;
-  padding: 0.6em;
-  flex-flow: row wrap;
-  align-items: center;
-  margin: 3em 8em;
-  width: 20em;
-  height: 20em;
-  border-radius: 50%;
-  background-color: red;
-  box-shadow: 0 0 1em 0.2em #282727;
-}
-
-.caule {
-  --cor-caule:green;
-  font-size:5em;
+  width: fit-content;
+  margin-right: 10%;
   position: relative;
-  display: block;
-  border-right: 1em solid transparent;
-  border-bottom: 0.7em solid var( --cor-caule);
-  border-left: 1em solid transparent;
-  transform: rotate(70deg);
-  
- }
- .caule:before {
-  border-bottom: 0.8em solid var( --cor-caule);
-  border-left: 0.3em solid transparent;
-  border-right: 0.3em solid transparent;
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: -0.45em;
-  left: -0.65em;
-  display: block;
-  content:"";
-  transform: rotate(-35deg);
- }
- .caule:after {
-  position: absolute;
-  display: block;
-  top: 0.03em;
-  left: -1.05em;
-  width: 0;
-  height: 0;
-  border-right: 1em solid transparent;
-  border-bottom: 0.7em solid var(--cor-caule);
-  border-left: 1em solid transparent;
-  transform: rotate(-70deg);
-  content:"";
- }
- 
- .mancha-branca{
-  background-color: #fff;
-  margin:0;
-  width: 5%;
-  height: 5%;
-  border-radius: 50%;
-  opacity: .85;
- }
+  inset: 10% 24%;
+}
  .timer{
   color:#fff;
-  font-size:5em;
-  justify-self: center;
-  align-self: center;
-  margin: 0em .65em .8em;
+  font-size:7em;
+  position: absolute;
+  top: 50%;
+  left: 23%;
   text-shadow: 4px 1px 2px #000;
  }
  .botoes-pomodoro{
+  position:relative;
+  left: 32%;
+  margin-top: 10px ;
   display:flex;
   flex-flow: column wrap;
-  margin: 0em 9em 0.5em;
   width: 4em;
   height: 4em;
  }

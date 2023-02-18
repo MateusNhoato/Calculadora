@@ -1,6 +1,6 @@
 # Calculadora
 
-Projeto feito no bootcamp Sharpcoders, da Ímã learning Place. É uma calculadora feita com html, css e js.
+Projeto feito no bootcamp Sharpcoders, da Ímã learning Place. Se trata de uma calculadora, um pomodoro e um to-do list feitos com html, css e js.
 
 ## Autor
 

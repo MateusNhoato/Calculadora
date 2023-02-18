@@ -4,7 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>Lista de Tarefas</title>
+    <script src="js/todo.js" defer></script>
+    <title>To Do List</title>
   </head>
 
   <body>
@@ -13,39 +14,27 @@
         <ul>
           <li><a href="calculadora.html">Calculadora</a></li>
           <li><a href="pomodoro.html">Pomodoro</a></li>
-          <li><a href="lista.html">Lista de Tarefas</a></li>
+          <li><a href="lista.html">To Do</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
+      <div class="tarefas">
+        <input id="ToDo" type="text" placeholder="Tarefa a fazer">
+        <button type="submit" id="ToDo-Button">Adicionar</button>
+      </div>
       <div class="bloco-de-notas">
-        <div class="cabecalho">Lista de Tarefas</div>
-        <div class="linhas">    
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">
-          <input type="checkbox" class="checkbox">
-          <input class="linha">      
+        <div class="cabecalho">To Do List</div>
+        <div class="linhas" id="ToDos">    
+
+        
         </div>
       </div>
     </main>
   </body>
   <footer>
-    <p>Lista de Tarefas - Mateus Nhoato &copy;</p>
+    <p>Todo List - Mateus Nhoato &copy;</p>
     <a href="https://github.com/MateusNhoato"><img class="icone" src="icones/github-logo-6532.svg" alt="github"></a>
     <a href="https://www.linkedin.com/in/mateus-nhoato/"><img class="icone" src="icones/linkedin-logo-2430.svg" alt="linkedin"></a>
   </footer>
