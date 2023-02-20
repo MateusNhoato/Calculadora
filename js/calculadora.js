@@ -74,6 +74,10 @@ class Calculadora {
       }
     }
     
+    if(!this.ligada)
+      return;
+
+
     // pegando valores atuais e passados
     let valorOperacao;
     const passada = +this.textoOperacaoPassada.innerText.split(" ")[0];

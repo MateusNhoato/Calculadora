@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+main{
+  margin-left: 12em;
+}
+
 /* header */
 .nav-bar {
   width: 100%;
@@ -38,7 +42,7 @@
 /* footer */
 footer {
   position: relative;
-  inset: 5% 27% 0px;
+  inset: 5% 35% 0px;
   width: 24em;
   height: 13em;
   display: flex;
@@ -128,7 +132,7 @@ button:active {
   width: 100%;
   overflow-wrap: break-word;
   color: gray;
-  position: fixed;
+  justify-self: flex-end ;
   font-size: 0.75em;
 }
 
@@ -340,18 +344,26 @@ input[type="checkbox"] {
   color:#fff;
   font-size:7em;
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 23%;
   text-shadow: 4px 1px 2px #000;
+
  }
 
- .timer #modo{
+ .timer #modo, #sessoes{
   font-size: 0.5em;
   color:#000;
   position:relative;
-  margin-left: 5%;
+  margin-left: 10%;
   text-shadow: 3px 1px 2px #fff;
 }
+
+.timer #sessoes{
+  height: auto;
+  width: auto;
+  margin-left: 42%;
+}
+
 
  .botoes-pomodoro{
   position:relative;

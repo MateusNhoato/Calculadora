@@ -7,7 +7,7 @@ const numeroSessoes = document.getElementById("sessoes");
 function pomodoro(){
     let segundos = 0;
     let tempo = 25;
-
+    let sessoes = 0;
     setInterval(function () {
     segundos += 1;
     let minutos = Math.floor(segundos / 60);
@@ -25,12 +25,15 @@ function pomodoro(){
       if(tempo === 25)
       {
         tempo = 5;
+        modo.style.marginLeft = '5%';
         modo.innerText = "Descanso";
       }
       else
        {
         tempo = 25;
         modo.innerText = "Trabalho";
+        modo.style.marginLeft = '10%';
+        numeroSessoes.textContent = ++sessoes;
        }
       segundos = 0;
       timer.innerText = "00:00";
